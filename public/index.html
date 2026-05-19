@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siraj Center – Affiliated 501(c)(3) Nonprofit</title>
-  <meta name="description" content="Siraj Center is a California nonprofit 501(c)(3) organization affiliated with the Mountain House Muslim Association (MHMA).">
+  <title>Siraj Center</title>
+  <meta name="description" content="Siraj Center is a California nonprofit 501(c)(3) organization serving the Muslim community of Mountain House.">
   <link rel="stylesheet" href="/css/style.css">
   <style>
     .home-hero {
@@ -21,116 +21,27 @@
       inset: 0;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    .arabic-text {
-      font-family: 'Amiri', serif;
-      font-size: 1.4rem;
-      opacity: .7;
-      margin-bottom: 20px;
-      letter-spacing: .05em;
-    }
-    .home-hero h1 {
-      font-family: 'Amiri', serif;
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 700;
-      position: relative;
-      margin-bottom: 16px;
-      line-height: 1.1;
-    }
-    .home-hero .tagline {
-      font-size: 1.15rem;
-      opacity: .85;
-      position: relative;
-      max-width: 560px;
-      margin: 0 auto 36px;
-    }
+    .arabic-text { font-family: 'Amiri', serif; font-size: 1.4rem; opacity: .7; margin-bottom: 20px; }
+    .home-hero h1 { font-family: 'Amiri', serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 700; position: relative; margin-bottom: 16px; line-height: 1.1; }
+    .home-hero .tagline { font-size: 1.1rem; opacity: .85; position: relative; max-width: 500px; margin: 0 auto 36px; }
     .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
-    .hero-ctas .btn-white {
-      background: white;
-      color: var(--green-dark);
-      font-weight: 700;
-      border: none;
-    }
-    .hero-ctas .btn-white:hover { background: var(--green-pale); }
-    .hero-ctas .btn-ghost {
-      background: transparent;
-      border: 2px solid rgba(255,255,255,.6);
-      color: white;
-      font-weight: 700;
-    }
-    .hero-ctas .btn-ghost:hover { background: rgba(255,255,255,.1); }
-
-    .stats-bar {
-      background: white;
-      border-bottom: 1px solid var(--green-light);
-      padding: 28px 24px;
-    }
-    .stats-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-      gap: 24px;
-    }
-    .stat-num {
-      font-family: 'Amiri', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--green-mid);
-    }
-    .stat-label {
-      font-size: .82rem;
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    .quick-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .quick-link-card {
-      background: white;
-      border: 1px solid var(--green-light);
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-decoration: none;
-      color: var(--text);
-      transition: all .25s;
-      display: block;
-    }
-    .quick-link-card:hover {
-      border-color: var(--green-main);
-      box-shadow: 0 6px 24px rgba(6,79,59,.12);
-      transform: translateY(-3px);
-    }
-    .quick-link-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-    .quick-link-card h3 {
-      font-family: 'Amiri', serif;
-      font-size: 1.2rem;
-      color: var(--green-dark);
-      margin-bottom: 6px;
-    }
+    .btn-white { background: white; color: var(--green-dark); font-weight: 700; border: none; }
+    .btn-white:hover { background: var(--green-pale); }
+    .btn-ghost { background: transparent; border: 2px solid rgba(255,255,255,.6); color: white; font-weight: 700; }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+    .quick-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .quick-link-card { background: white; border: 1px solid var(--green-light); border-radius: 12px; padding: 28px 24px; text-decoration: none; color: var(--text); transition: all .25s; display: block; }
+    .quick-link-card:hover { border-color: var(--green-main); box-shadow: 0 6px 24px rgba(6,79,59,.12); transform: translateY(-3px); }
+    .quick-link-icon { font-size: 2rem; margin-bottom: 12px; }
+    .quick-link-card h3 { font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--green-dark); margin-bottom: 6px; }
     .quick-link-card p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
-
-    @media (max-width: 600px) {
-      .stats-inner { grid-template-columns: 1fr; gap: 16px; }
-    }
   </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-brand">Siraj Center<span>Mountain House, CA</span></a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -141,32 +52,14 @@
     </ul>
   </div>
 </nav>
-
 <main>
   <div class="home-hero">
     <p class="arabic-text">بسم الله الرحمن الرحيم</p>
     <h1>Siraj Center</h1>
-    <p class="tagline">A 501(c)(3) nonprofit serving the Muslim community of Mountain House and beyond.</p>
+    <p class="tagline">A nonprofit serving the Muslim community of Mountain House and beyond.</p>
     <div class="hero-ctas">
       <a href="/about" class="btn btn-white">Learn About Us</a>
       <a href="/contact" class="btn btn-ghost">Get in Touch</a>
-    </div>
-  </div>
-
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div>
-        <div class="stat-num">501(c)(3)</div>
-        <div class="stat-label">IRS Recognized</div>
-      </div>
-      <div>
-        <div class="stat-num">CA</div>
-        <div class="stat-label">Nonprofit Corp.</div>
-      </div>
-      <div>
-        <div class="stat-num">MHMA</div>
-        <div class="stat-label">Governance Partner</div>
-      </div>
     </div>
   </div>
 
@@ -175,9 +68,7 @@
       <p class="badge">Who We Are</p>
       <h2 class="section-title">Serving Our Community with Purpose</h2>
       <div class="divider"></div>
-      <p style="max-width:680px; font-size:1.05rem; margin-bottom: 32px;">
-        Siraj Center is a separate California nonprofit religious corporation recognized as a 501(c)(3) organization by the Internal Revenue Service. We operate under the governance oversight of the Mountain House Muslim Association (MHMA), supporting religious, educational, and community-centered initiatives.
-      </p>
+      <p style="max-width:660px; font-size:1.05rem; margin-bottom: 32px;">Siraj Center is a California nonprofit religious corporation recognized as a 501(c)(3) organization by the IRS. We support religious, educational, and community-centered initiatives for Muslims in Mountain House and the surrounding area.</p>
       <a href="/about" class="btn btn-primary">Our Full Story →</a>
     </div>
   </section>
@@ -187,64 +78,25 @@
       <h2 class="section-title">Explore Siraj Center</h2>
       <div class="divider"></div>
       <div class="quick-links">
-        <a href="/about" class="quick-link-card">
-          <div class="quick-link-icon">🕌</div>
-          <h3>About Us</h3>
-          <p>Our history, legal status, and what makes Siraj Center distinct.</p>
-        </a>
-        <a href="/mission" class="quick-link-card">
-          <div class="quick-link-icon">🌟</div>
-          <h3>Mission & Vision</h3>
-          <p>The values and goals that drive everything we do.</p>
-        </a>
-        <a href="/governance" class="quick-link-card">
-          <div class="quick-link-icon">📋</div>
-          <h3>Governance</h3>
-          <p>Our structure, oversight relationship with MHMA, and accountability.</p>
-        </a>
-        <a href="/leadership" class="quick-link-card">
-          <div class="quick-link-icon">👥</div>
-          <h3>Leadership</h3>
-          <p>Meet the Board of Directors serving our community.</p>
-        </a>
-        <a href="/contact" class="quick-link-card">
-          <div class="quick-link-icon">✉️</div>
-          <h3>Contact Us</h3>
-          <p>Reach out with questions, feedback, or to get involved.</p>
-        </a>
+        <a href="/about" class="quick-link-card"><div class="quick-link-icon">🕌</div><h3>About Us</h3><p>Our background, legal status, and what we're about.</p></a>
+        <a href="/mission" class="quick-link-card"><div class="quick-link-icon">🌟</div><h3>Mission & Vision</h3><p>The values and goals that drive everything we do.</p></a>
+        <a href="/governance" class="quick-link-card"><div class="quick-link-icon">📋</div><h3>Governance</h3><p>How we are structured and held accountable.</p></a>
+        <a href="/leadership" class="quick-link-card"><div class="quick-link-icon">👥</div><h3>Leadership</h3><p>Meet the Board of Directors serving our community.</p></a>
+        <a href="/contact" class="quick-link-card"><div class="quick-link-icon">✉️</div><h3>Contact Us</h3><p>Reach out with questions or to get involved.</p></a>
       </div>
     </div>
   </section>
 </main>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
-      <div>
-        <h3>Siraj Center</h3>
-        <p style="margin-bottom:12px;">A separate 501(c)(3) nonprofit organization under MHMA governance oversight. Serving the Mountain House Muslim community.</p>
-        <p>EIN: 29-2729227</p>
-      </div>
-      <div>
-        <h3>Pages</h3>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/mission">Mission & Vision</a>
-        <a href="/governance">Governance</a>
-        <a href="/leadership">Leadership</a>
-        <a href="/contact">Contact</a>
-      </div>
-      <div>
-        <h3>Address</h3>
-        <p>250 East Main Street<br>Mountain House, CA 95391</p>
-      </div>
+      <div><h3>Siraj Center</h3><p style="margin-bottom:12px;">A 501(c)(3) nonprofit serving the Mountain House Muslim community.</p><p>EIN: 29-2729227</p></div>
+      <div><h3>Pages</h3><a href="/">Home</a><a href="/about">About</a><a href="/mission">Mission & Vision</a><a href="/governance">Governance</a><a href="/leadership">Leadership</a><a href="/contact">Contact</a></div>
+      <div><h3>Address</h3><p>250 East Main Street<br>Mountain House, CA 95391</p></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Siraj Center. All rights reserved. | California Nonprofit Religious Corporation | 501(c)(3) Organization</p>
-    </div>
+    <div class="footer-bottom"><p>© 2025 Siraj Center. All rights reserved. | California Nonprofit Religious Corporation | 501(c)(3)</p></div>
   </div>
 </footer>
-
 <script src="/js/main.js"></script>
 </body>
 </html>
