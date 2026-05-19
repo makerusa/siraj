@@ -1,315 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siraj Center - A Program of MHMA</title>
-    <meta name="description" content="Siraj Center is a California nonprofit religious organization operating under the governance and oversight of the Mountain House Muslim Association (MHMA).">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .animate-bounce {
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siraj Center – Affiliated 501(c)(3) Nonprofit</title>
+  <meta name="description" content="Siraj Center is a California nonprofit 501(c)(3) organization affiliated with the Mountain House Muslim Association (MHMA).">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .home-hero {
+      background: linear-gradient(145deg, #064e3b 0%, #065f46 55%, #047857 100%);
+      color: white;
+      text-align: center;
+      padding: 100px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .arabic-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.4rem;
+      opacity: .7;
+      margin-bottom: 20px;
+      letter-spacing: .05em;
+    }
+    .home-hero h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 700;
+      position: relative;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .home-hero .tagline {
+      font-size: 1.15rem;
+      opacity: .85;
+      position: relative;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .hero-ctas .btn-white {
+      background: white;
+      color: var(--green-dark);
+      font-weight: 700;
+      border: none;
+    }
+    .hero-ctas .btn-white:hover { background: var(--green-pale); }
+    .hero-ctas .btn-ghost {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,.6);
+      color: white;
+      font-weight: 700;
+    }
+    .hero-ctas .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    .stats-bar {
+      background: white;
+      border-bottom: 1px solid var(--green-light);
+      padding: 28px 24px;
+    }
+    .stats-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 24px;
+    }
+    .stat-num {
+      font-family: 'Amiri', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green-mid);
+    }
+    .stat-label {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .quick-link-card {
+      background: white;
+      border: 1px solid var(--green-light);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all .25s;
+      display: block;
+    }
+    .quick-link-card:hover {
+      border-color: var(--green-main);
+      box-shadow: 0 6px 24px rgba(6,79,59,.12);
+      transform: translateY(-3px);
+    }
+    .quick-link-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .quick-link-card h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .quick-link-card p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+
+    @media (max-width: 600px) {
+      .stats-inner { grid-template-columns: 1fr; gap: 16px; }
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-emerald-700">Siraj Center</h1>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-emerald-600 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-emerald-600 transition">About</a>
-                    <a href="#governance" class="text-gray-700 hover:text-emerald-600 transition">Governance</a>
-                    <a href="#leadership" class="text-gray-700 hover:text-emerald-600 transition">Leadership</a>
-                    <a href="#mhma" class="text-gray-700 hover:text-emerald-600 transition">MHMA Relationship</a>
-                </div>
+<body>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700">
-                        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Siraj Center<span>Mountain House, CA</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/mission">Mission & Vision</a></li>
+      <li><a href="/governance">Governance</a></li>
+      <li><a href="/leadership">Leadership</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-700 hover:bg-emerald-50">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-700 hover:bg-emerald-50">About</a>
-                <a href="#governance" class="block px-3 py-2 text-gray-700 hover:bg-emerald-50">Governance</a>
-                <a href="#leadership" class="block px-3 py-2 text-gray-700 hover:bg-emerald-50">Leadership</a>
-                <a href="#mhma" class="block px-3 py-2 text-gray-700 hover:bg-emerald-50">MHMA Relationship</a>
-            </div>
-        </div>
-    </nav>
+<main>
+  <div class="home-hero">
+    <p class="arabic-text">بسم الله الرحمن الرحيم</p>
+    <h1>Siraj Center</h1>
+    <p class="tagline">A 501(c)(3) nonprofit serving the Muslim community of Mountain House and beyond.</p>
+    <div class="hero-ctas">
+      <a href="/about" class="btn btn-white">Learn About Us</a>
+      <a href="/contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-5xl sm:text-6xl font-bold text-emerald-800 mb-4">
-                Siraj Center
-            </h1>
-            <p class="text-2xl text-emerald-600 mb-8">
-                A Program of the Mountain House Muslim Association (MHMA)
-            </p>
-            <div class="max-w-3xl mx-auto mb-12">
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Siraj Center is a California nonprofit religious organization operating under the governance and oversight of the Mountain House Muslim Association (MHMA). Its mission is to support religious, educational, and community-centered initiatives that serve the Muslim community.
-                </p>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#about" class="bg-emerald-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-emerald-700 transition shadow-lg">
-                    About Siraj Center
-                </a>
-                <a href="#mhma" class="bg-white text-emerald-600 px-8 py-3 rounded-lg text-lg font-semibold border-2 border-emerald-600 hover:bg-emerald-50 transition shadow-lg">
-                    About MHMA
-                </a>
-            </div>
-            <div class="mt-12">
-                <svg class="mx-auto text-emerald-600 animate-bounce w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-num">501(c)(3)</div>
+        <div class="stat-label">IRS Recognized</div>
+      </div>
+      <div>
+        <div class="stat-num">CA</div>
+        <div class="stat-label">Nonprofit Corp.</div>
+      </div>
+      <div>
+        <div class="stat-num">MHMA</div>
+        <div class="stat-label">Governance Partner</div>
+      </div>
+    </div>
+  </div>
 
-    <!-- About Siraj Center -->
-    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-emerald-800 mb-8 text-center">About Siraj Center</h2>
-            
-            <div class="bg-emerald-50 rounded-lg p-8 shadow-md">
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Legal Status</h3>
-                        <p class="text-gray-700">California nonprofit religious corporation</p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl font-semibold text-emerald-700 mb-2">IRS Status</h3>
-                        <p class="text-gray-700">501(c)(3) organization</p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Mission</h3>
-                        <p class="text-gray-700">
-                            Siraj Center supports religious, educational, and community-centered initiatives that serve the Muslim community in California and beyond.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Governance</h3>
-                        <p class="text-gray-700">
-                            Siraj Center is governed by its own Board of Directors and operates under the oversight of the MHMA Board of Trustees, which appoints the Siraj Center Board and ensures alignment with MHMA's mission and fiduciary standards.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="content-section" style="background: var(--green-pale);">
+    <div class="container">
+      <p class="badge">Who We Are</p>
+      <h2 class="section-title">Serving Our Community with Purpose</h2>
+      <div class="divider"></div>
+      <p style="max-width:680px; font-size:1.05rem; margin-bottom: 32px;">
+        Siraj Center is a separate California nonprofit religious corporation recognized as a 501(c)(3) organization by the Internal Revenue Service. We operate under the governance oversight of the Mountain House Muslim Association (MHMA), supporting religious, educational, and community-centered initiatives.
+      </p>
+      <a href="/about" class="btn btn-primary">Our Full Story →</a>
+    </div>
+  </section>
 
-    <!-- Governance & Oversight -->
-    <section id="governance" class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-emerald-50 to-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-emerald-800 mb-8 text-center">Governance & Oversight</h2>
-            
-            <div class="bg-white rounded-lg p-8 shadow-lg">
-                <h3 class="text-2xl font-semibold text-emerald-700 mb-6">Governance Structure</h3>
-                
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start">
-                        <span class="text-emerald-600 mr-3 text-xl">•</span>
-                        <span class="text-gray-700">Siraj Center is a separate nonprofit organization.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-600 mr-3 text-xl">•</span>
-                        <span class="text-gray-700">The MHMA Board of Trustees provides governance oversight.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-600 mr-3 text-xl">•</span>
-                        <span class="text-gray-700">The MHMA Trustees appoint the Siraj Center Board of Directors.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-600 mr-3 text-xl">•</span>
-                        <span class="text-gray-700">Siraj Center officers are elected by its Board of Directors.</span>
-                    </li>
-                </ul>
+  <section class="content-section">
+    <div class="container">
+      <h2 class="section-title">Explore Siraj Center</h2>
+      <div class="divider"></div>
+      <div class="quick-links">
+        <a href="/about" class="quick-link-card">
+          <div class="quick-link-icon">🕌</div>
+          <h3>About Us</h3>
+          <p>Our history, legal status, and what makes Siraj Center distinct.</p>
+        </a>
+        <a href="/mission" class="quick-link-card">
+          <div class="quick-link-icon">🌟</div>
+          <h3>Mission & Vision</h3>
+          <p>The values and goals that drive everything we do.</p>
+        </a>
+        <a href="/governance" class="quick-link-card">
+          <div class="quick-link-icon">📋</div>
+          <h3>Governance</h3>
+          <p>Our structure, oversight relationship with MHMA, and accountability.</p>
+        </a>
+        <a href="/leadership" class="quick-link-card">
+          <div class="quick-link-icon">👥</div>
+          <h3>Leadership</h3>
+          <p>Meet the Board of Directors serving our community.</p>
+        </a>
+        <a href="/contact" class="quick-link-card">
+          <div class="quick-link-icon">✉️</div>
+          <h3>Contact Us</h3>
+          <p>Reach out with questions, feedback, or to get involved.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
 
-                <div class="bg-emerald-50 rounded-lg p-6 border-2 border-emerald-200">
-                    <h4 class="text-lg font-semibold text-emerald-700 mb-4 text-center">Organizational Structure</h4>
-                    <div class="flex flex-col items-center space-y-4 text-center">
-                        <div class="bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md">
-                            MHMA Board of Trustees
-                        </div>
-                        <div class="text-emerald-600 text-2xl">↓</div>
-                        <div class="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md">
-                            Siraj Center Board of Directors
-                        </div>
-                        <div class="text-emerald-600 text-2xl">↓</div>
-                        <div class="bg-emerald-400 text-white px-6 py-3 rounded-lg font-semibold shadow-md">
-                            Siraj Center Officers
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h3>Siraj Center</h3>
+        <p style="margin-bottom:12px;">A separate 501(c)(3) nonprofit organization under MHMA governance oversight. Serving the Mountain House Muslim community.</p>
+        <p>EIN: 29-2729227</p>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/mission">Mission & Vision</a>
+        <a href="/governance">Governance</a>
+        <a href="/leadership">Leadership</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>250 East Main Street<br>Mountain House, CA 95391</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Siraj Center. All rights reserved. | California Nonprofit Religious Corporation | 501(c)(3) Organization</p>
+    </div>
+  </div>
+</footer>
 
-    <!-- Leadership -->
-    <section id="leadership" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-emerald-800 mb-8 text-center">Leadership</h2>
-            
-            <div class="bg-emerald-50 rounded-lg p-8 shadow-md">
-                <h3 class="text-2xl font-semibold text-emerald-700 mb-6">Siraj Center Board of Directors</h3>
-                
-                <ul class="space-y-3 mb-6">
-                    <li class="text-lg text-gray-700 flex items-center">
-                        <span class="w-2 h-2 bg-emerald-600 rounded-full mr-3"></span>
-                        Umar Sear
-                    </li>
-                    <li class="text-lg text-gray-700 flex items-center">
-                        <span class="w-2 h-2 bg-emerald-600 rounded-full mr-3"></span>
-                        Asif Alvi
-                    </li>
-                    <li class="text-lg text-gray-700 flex items-center">
-                        <span class="w-2 h-2 bg-emerald-600 rounded-full mr-3"></span>
-                        Aynan Chaudhry
-                    </li>
-                </ul>
-                
-                <p class="text-gray-600 italic border-t border-emerald-200 pt-4">
-                    Board members serve on a volunteer basis.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Relationship to MHMA -->
-    <section id="mhma" class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-emerald-50 to-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-emerald-800 mb-8 text-center">Relationship to MHMA</h2>
-            
-            <div class="bg-white rounded-lg p-8 shadow-lg">
-                <div class="bg-emerald-600 text-white text-center py-6 px-4 rounded-lg mb-6">
-                    <p class="text-3xl font-bold mb-2">MHMA</p>
-                    <p class="text-lg">Mountain House Muslim Association</p>
-                </div>
-                
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Siraj Center operates as a mission-aligned organization under the governance oversight of the Mountain House Muslim Association (MHMA). MHMA provides strategic, financial, and fiduciary oversight to ensure responsible stewardship of resources and alignment with community needs.
-                </p>
-                
-                <div class="bg-emerald-50 rounded-lg p-6 border-l-4 border-emerald-600">
-                    <p class="text-gray-700 font-semibold mb-2">Key Points:</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-start text-gray-700">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            Strategic oversight and guidance
-                        </li>
-                        <li class="flex items-start text-gray-700">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            Financial accountability and transparency
-                        </li>
-                        <li class="flex items-start text-gray-700">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            Mission alignment with community values
-                        </li>
-                        <li class="flex items-start text-gray-700">
-                            <span class="text-emerald-600 mr-2">✓</span>
-                            Responsible stewardship of resources
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-emerald-800 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Siraj Center</h3>
-                    <p class="text-emerald-100 mb-4">
-                        A nonprofit religious organization under MHMA oversight
-                    </p>
-                    <p class="text-emerald-200 text-sm">
-                        Mountain House, California
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Legal Information</h4>
-                    <p class="text-emerald-100 text-sm mb-2">
-                        Siraj Center is a California nonprofit religious corporation and a 501(c)(3) organization operating under the governance oversight of the Mountain House Muslim Association (MHMA).
-                    </p>
-                    <p class="text-emerald-200 text-sm mt-4">
-                        EIN: 29-2729227
-                    </p>
-                </div>
-            </div>
-            
-            <div class="border-t border-emerald-700 pt-8 text-center">
-                <p class="text-emerald-200 text-sm mb-2">
-                    For more information about MHMA, please visit:
-                </p>
-                <a href="https://mhma.us" target="_blank" rel="noopener noreferrer" class="text-white hover:text-emerald-300 font-semibold underline">
-                    www.mhma.us
-                </a>
-                <p class="text-emerald-300 text-sm mt-6">
-                    © 2024 Siraj Center. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        const closeIcon = document.getElementById('close-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            });
-        });
-    </script>
+<script src="/js/main.js"></script>
 </body>
 </html>

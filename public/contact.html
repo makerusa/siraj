@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Siraj Center</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--green-light);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .contact-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-info-item p { font-size: .9rem; color: var(--muted); line-height: 1.5; margin: 0; }
+    .contact-info-item strong { color: var(--text); display: block; margin-bottom: 2px; }
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Siraj Center<span>Mountain House, CA</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/mission">Mission & Vision</a></li>
+      <li><a href="/governance">Governance</a></li>
+      <li><a href="/leadership">Leadership</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out with questions or to get involved.</p>
+  </div>
+
+  <section class="content-section">
+    <div class="container" style="max-width: 1000px;">
+      <div class="contact-layout">
+
+        <!-- Info Side -->
+        <div>
+          <p class="badge">Get in Touch</p>
+          <h2 class="section-title" style="font-size:1.8rem;">We're Here to Help</h2>
+          <div class="divider"></div>
+          <p style="margin-bottom:28px; font-size:.95rem;">Whether you have a question about our programs, want to learn about getting involved, or need to reach our leadership, please don't hesitate to reach out.</p>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <p>250 East Main Street<br>Mountain House, CA 95391</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">🏛️</div>
+            <div>
+              <strong>Legal Information</strong>
+              <p>EIN: 29-2729227<br>California 501(c)(3) Nonprofit</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">🤝</div>
+            <div>
+              <strong>Affiliated With</strong>
+              <p>Mountain House Muslim Association (MHMA)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="card" style="padding: 36px;">
+          <h2 class="section-title" style="font-size:1.6rem; margin-bottom:6px;">Send a Message</h2>
+          <p style="margin-bottom:24px; color:var(--muted); font-size:.9rem;">We'll respond as soon as possible, in sha Allah.</p>
+
+          <div id="alert-success" class="alert alert-success">
+            ✅ Your message has been sent. We will be in touch soon, in sha Allah.
+          </div>
+          <div id="alert-error" class="alert alert-error"></div>
+
+          <div id="contact-form">
+            <div class="form-2col">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button id="submit-btn" class="btn btn-primary" style="width:100%; justify-content:center;">
+              Send Message
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <h3>Siraj Center</h3>
+        <p style="margin-bottom:12px;">A separate 501(c)(3) nonprofit organization under MHMA governance oversight.</p>
+        <p>EIN: 29-2729227</p>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/mission">Mission & Vision</a>
+        <a href="/governance">Governance</a>
+        <a href="/leadership">Leadership</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>250 East Main Street<br>Mountain House, CA 95391</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Siraj Center. All rights reserved. | California Nonprofit Religious Corporation | 501(c)(3) Organization</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+  // Override contact form to work with the non-form div
+  const nameEl = document.getElementById('name');
+  const emailEl = document.getElementById('email');
+  const subjectEl = document.getElementById('subject');
+  const messageEl = document.getElementById('message');
+  const submitBtn = document.getElementById('submit-btn');
+  const successAlert = document.getElementById('alert-success');
+  const errorAlert = document.getElementById('alert-error');
+
+  submitBtn.addEventListener('click', async () => {
+    successAlert.style.display = 'none';
+    errorAlert.style.display = 'none';
+
+    const name = nameEl.value.trim();
+    const email = emailEl.value.trim();
+    const subject = subjectEl.value.trim();
+    const message = messageEl.value.trim();
+
+    if (!name || !email || !message) {
+      errorAlert.textContent = 'Please fill in all required fields.';
+      errorAlert.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/send-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        successAlert.style.display = 'block';
+        nameEl.value = ''; emailEl.value = ''; subjectEl.value = ''; messageEl.value = '';
+      } else {
+        errorAlert.textContent = data.error || 'Something went wrong.';
+        errorAlert.style.display = 'block';
+      }
+    } catch {
+      errorAlert.textContent = 'Unable to send. Please check your connection.';
+      errorAlert.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+</script>
+</body>
+</html>
